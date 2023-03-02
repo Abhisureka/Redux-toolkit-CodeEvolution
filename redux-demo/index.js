@@ -95,6 +95,22 @@ const iceCreamReducer = (state = initialICeCreamState, action) => {
 				...state,
 				numOfIceCreams: state.numOfIceCreams + action.payload,
 			};
+
+		// even though we have separate reducers, when we dispatch an action both reducers receive that action
+		// one of them acts on it whereas other just ignores it.
+
+		// each reducer can update only it's portion of application state however it can respond to any action
+		// dispatched in the application but not in REDUX TOOLKIT
+
+		// in REDUX TOOLKIT by default reducers from one createSlice will only respond to the action types generated
+		// by the same slice.
+
+		case CAKE_ORDERED: // giving free iceCream along with cake
+			return {
+				// first make a copy of the state object and then only update the no. of cakes
+				...state,
+				numOfIceCreams: state.numOfIceCreams - 1,
+			};
 		default:
 			return state;
 	}

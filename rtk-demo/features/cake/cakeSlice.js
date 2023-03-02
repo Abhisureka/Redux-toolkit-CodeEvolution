@@ -19,6 +19,7 @@ const cakeSlice = createSlice({
 		// 4. also returns the main reducer fn which we can provide to our redux store
 		// action { type: 'name/reducerKey', payload: undefined }
 		// action { type: 'cake/ordered', payload: undefined }
+
 		ordered: (state, action) => {
 			state.numOfCakes--;
 		},
