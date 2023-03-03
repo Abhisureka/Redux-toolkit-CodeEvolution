@@ -152,7 +152,7 @@ store.dispatch(restockIceCream(5));
 // actions.restockCake(10);
 // actions.orderCake();
 
-// store responsibility no. 5 : handles unregisterng of listeners via the function returne by subscribe(listener)
+// store responsibility no. 5 : handles unregisterng of listeners via the function returned by subscribe(listener)
 unsubscribe();
 store.dispatch(orderCake(3)); // this will not work as we have already unsubscribed from the store
 
